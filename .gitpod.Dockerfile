@@ -8,6 +8,8 @@ RUN sudo apt-get install -y graphviz
 
 RUN wget -O /home/gitpod/requirements.txt https://raw.githubusercontent.com/gsingers/search_fundamentals_course/main/requirements.txt
 
+RUN git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+
 RUN echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> /home/gitpod/.bashrc
 RUN echo 'eval "$(pyenv init -)"' >> /home/gitpod/.bashrc
 RUN echo 'eval "$(pyenv virtualenv-init -)"' >> /home/gitpod/.bashrc
